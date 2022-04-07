@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>reCAPTCHA</title>
+<style type="text/css">
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfABc4EsA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="bframe_data/styles__ltr.css">
+<script nonce="" type="text/javascript">window['__recaptcha_api'] = 'https://www.google.com/recaptcha/api2/';</script>
+<script type="text/javascript" src="recaptcha__ru.js" nonce="">
+      
+    </script></head>
+<body><input type="hidden" id="recaptcha-token" value="03AGdBq250MoTXb7bTtf9US1_HhXq9dT3v2zjId8ox1DPQfgihgnK0Vo3YiQIjWERnQjRn3uaHaWKK5PnqO2UyrlfKduve8TJKQgLy3vm-9hLyeOB00qyQKodJLsI67VHybhI9fRZIHcBDrx5-ehVb5WuBHFAMOd0F3_OMO5j8y6Orj3hp0IDxw0uw67lhwqEmSVzForkMwVYlSUtSBjAVAlRkDA7I88zfR1J7vXK8RFsAeuHP61KcGETr-ehuRamWZzvMsBfbg0K4IE1ib4MZC5f4VpIkWLXFjz3ARYN1VEreRUTKpLfz-F2GynYhe9U2G2QOXPDGkE4RRqe9KXjO30oUb3vvdfxIXzeNO_4PRVCgZdeu3gZ14la-fgFvBC2sgWykkbKo5gRcmAigSSUJc6ragqS3ejO2yYKw3j-tvc8ww7tiYDQYQsc0whAt6YqrOuGsKEc0sxOjv9BbCpxsIPh5Io6E5KHTHUiHg69CabuvayfZa_xfQfiCAw66p8bNWx2EvWPMLAZI9fx8CM0NdP103RHiK0h-cY0b2WqkJj-jFW5nOe568z_M3Gu42YAtQvgnr8uweey3Qif_FVtYCkLndnhJl0dlN4ABwOwdCXgFgqjM-LvRXyJIqbRzl-5OIf4qqFdI1YUy96dm29tlPc9d1fHJP_v6XZ4gl-QqaIpe0PTKHPDm9Rlh82OoqWiQn2IsTIELHn00AMDV39kH0qyq_8_XourZJ4sBx_BS5Hine5L-6Ten4aaRG8TK041Ay1lAx48EJD9-jtmt3vIHUxG7HoMlXw6juc1sVYRqHHuLrEXpTwiBR5GVBY_Ng7OuLVi_td1vnU0XRsxx176UshY-Z2jvHLUeqznVygWZJL0tBi6YxE0x5S53Ks9SuEV2-pP-ItxvZ6_LDJQXBGVaHtgHMkrZK7x-jla_68-0NHRd6eRK0e6YV27Nd6aAh1Srb2q_kKbCUtHCC70WTj4wxKIS2HzsK3x1o2i0XLjRq6m54MBrhEC-geDDyb2BKlkURpJPOFSeMyfATBanPqJAgjp-FNMNoS1RjZjsnk8GwtmqxVxIfjoTkAJg7sj7rllfkHU6BCbd20ARbiF4h6LD1gm-MlzqGeA1jGySBpWMQl5-G_06W3MCWhvTOa6XrOGmxaPpxfUcbgAmN59yMdGrrEX0Q1ui1fcLAUFno0izNO0irVZobnhH4jdp73J1rSYHpZGSV1rMsBSk-Al3DZY99BjdCzil25dbdvM1uTnpThVIbbI8GzZesM4D5T68Q1R_mUoaZeHRxq7YrPVHW3zO1GiMjZvlkmF7Fp_EhmRrXG9ZNRAFHfyZfovfVM3yJSByfVcupdKZZ81oXe95MAhxZ7oQK--2GR7QJ-Pux5Q-T1zo19RaAxnfNigSfXBGWGt2DK1J5qBV3j11GZb3Ff5sdamokVBNz61KbuQFEcMo33ZXnd8Df7Rt6u_LUCCQjYx4YyzrftmgEUy9qNn9x81Q2MuH8XQtdZPLcgVyzQaTEHLlTo1Tn6JpEUVSeylcDELPdIClmE0D3iviaeKAXFdz_U3bezS7_SsCREpSyexHoETGf0vHOq3wNJaiH8x8_p4KMupJCpdE3CCuOmf7GfluTrAnw-DZwbnjjO9OaU9LXjvvzr7TBNPXlnZLOZTtDXVy6WF25-fg0UZYDdO76EoPubBXxLyyQwnT57NJumdvXGlv2cMQcjCeVQ23oTnJ0JBo90OU-vS3f-Wh5PsKwVypj79FlNbzQ4V9_oaSsaL_dfVZfgBb3jOukpRPAVkifXZK7PG0MXuzvC6HVEChXtOD8mRjEy7-QIibwa3ocW7Vv2MgxrMRn3Hg4nOz_T3c5Q8iUtmVznMI8IST1PblK5O2MTQJF-oQS8uDQ1_0oa2TG8ppvMEbk0SeHfQAlfBqe0KBh3KtqUJ2KmQEN9tFu98hX9MkqukQpE1_h6NNV7F-iXpr3jOqfSjQRcMxl_s5ULePx_0HePNQE2SW_PhJ5ImgZrlRxObJxqmaTjPuSD_WkSaiOxyvptAPfkgzm9HnMp47Gd8nVpqea6p4avPWVt5WrjGOF0WBQ0kMhsa8tpFka-GIGGTdNuw4EEVDtS3TJmyRgvqq44MkOSA_HosngJ61FCMtzMvX4r5b9OwPilIJHF-fvYDJZ_8Rgbwv0IUS-QNPjYxWtnZ9p4sxMRCLVR46oeesjh-FgYEkCqXcspflU2iNYCSIxENXOpHEoG6QSLsPTpOgG2BhFhQwtzlahGm_Y_GdqslKA_MdgW77qYbRLZ3AQ6qDupw3MFTv9aNB_rv4wO6_INy-C_w8fpuoT4wNdbuiB1niSIfvvNrlwd5zd6ilcGvOE19ZCpwHs15ylzwr3kw04L7SzjJXToIRM2hLoCy4PI2kakuJ6JMoye8B59qzfpVh1zcxXHogCtUvr24Cc_2OI1ydsOGAGuHKsqozRWAduR8CpRios2SoJOO0c_o8vDiR6QyCq5f3T_FbgRrAy2_wGFVZaMA1PjF921uHp5t93d4vIpQ-U67jLYUwyePzlFP8Nx9PaBrmuWpbetXJ6hFRbWWPXO-LZ8Q7YJyEAivRhw4c8B6e1OBRSnsYmn89YOIDFpNnVh76YyddnK1fu62E6PTjFucarhmsFzF5orLSZOEuawauH0RHBGsjOqibAdxKw15Qw2ZsoJiX7vaQ1qN5DUvQp18fI4P_8r9ruAMAhHjtfbRH5gEBoIuVtw3u6m0RpCHEbAQmpJ5DxxxOmZ6NF23C_PVvAIZpWGf9BGiOHUTGIpSfbA0D-wrXtLIfxfqu7WjWcR75kwHkQUyQxte1gwASJeAVY5ofCmiqXWx8-tdG_6IoVh4ctgXAc-SfCv7E1cTCTURc6qrd9IWopgwmqTQSEu5gRa9AcW4IkTX62b7M23Or3x-i8JncBqhRx6j_dbA9CxagGIOg3n53HvPYNVbWrAXazzdHVV0sYraKBM_aHGoo4VKduQSLK0I1x8mvs3WLiI9QQPGdhKJDa0q-lodfqiod43uRO6ioK1EltL3E0Vniva1mHetCf7LjAutnPBygkl5yXuyRuu7cfstZc7t1_whdv9mw9yiKyajhoM549RzZ07VzAd7TfXIpiNJJm-MymDdCof5oKC_nt72A-lEtXdjoYiCLtwfbMAVlcOgm8WGcQYAUpeKXNaSkLkeUzqywBMoughFukhGaTNjaaEcqFiXfTVoOAL0FezxyDR5nOddpAo35zUk5Jz1J3CseWqtEAdhR6BbXTwU0KxSefTOTT36DFjuS--iqwhPwTWcyA1XEhGSW5b-I797yQBBWginruQ3M-PYIQHBLsdhkJyuzuskSCo8qMMs3HDcgZKEyL2cMHllNcuP98G1AIiDpH6f9MM8Cuqsqf-jPKqSKgdOLdtinVxJ1072kGs7ilF7TtiO2XC_SS6-1cBAwKaSl-q1VOkpJ2LxvYRb3KEIJL4ftN4VJ">
+<script type="text/javascript" nonce="">
+      
+        recaptcha.frame.Main.init("[\x22finput\x22,null,[\x22conf\x22,null,\x226Lf953kaAAAAACla_bsoSrwo5-CGsZh9WgyeaZ50\x22,0,null,null,0.75,null,[16,21]]]");
+      
+    </script><div></div><div style=""><div id="rc-imageselect"><div class="rc-imageselect-response-field"></div><span class="rc-imageselect-tabloop-begin" tabindex="0"></span><div class="rc-imageselect-payload"><div class="rc-imageselect-instructions"><div class="rc-imageselect-desc-wrapper"><div class="rc-imageselect-desc-no-canonical" style="width: 352px; font-size: 16px;">Выберите все изображения, где есть <strong style="font-size: 28px;">мотоциклы</strong></div></div><div class="rc-imageselect-progress"></div></div><div class="rc-imageselect-challenge"><div id="rc-imageselect-target" class="rc-imageselect-target" dir="ltr" role="presentation" aria-hidden="true"><table class="rc-imageselect-table-33"><tbody><tr><td role="button" tabindex="4" class="rc-imageselect-tile" aria-label="Проверка по изображению"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:0%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="5" class="rc-imageselect-tile" aria-label="Проверка по изображению"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:0%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="6" class="rc-imageselect-tile" aria-label="Проверка по изображению"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:0%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr><tr><td role="button" tabindex="7" class="rc-imageselect-tile" aria-label="Проверка по изображению"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-100%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="8" class="rc-imageselect-tile" aria-label="Проверка по изображению"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-100%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="9" class="rc-imageselect-tile" aria-label="Проверка по изображению"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-100%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr><tr><td role="button" tabindex="10" class="rc-imageselect-tile" aria-label="Проверка по изображению"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-200%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="11" class="rc-imageselect-tile" aria-label="Проверка по изображению"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-200%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="12" class="rc-imageselect-tile" aria-label="Проверка по изображению"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-200%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr></tbody></table></div></div><div class="rc-imageselect-incorrect-response" style="display:none">Повторите попытку.</div><div aria-live="polite"><div class="rc-imageselect-error-select-more" style="display:none">Выберите все совпадающие изображения.</div><div class="rc-imageselect-error-dynamic-more" style="display:none">Просмотрите также новые изображение.</div><div class="rc-imageselect-error-select-something" style="display:none">Обведите объект. Если его нет, нажмите кнопку перезагрузки.</div></div></div><div class="rc-footer"><div class="rc-separator"></div><div class="rc-controls"><div class="primary-controls"><div class="rc-buttons"><div class="button-holder reload-button-holder"><button class="rc-button goog-inline-block rc-button-reload" title="Обновить" value="" id="recaptcha-reload-button" tabindex="3"></button></div><div class="button-holder audio-button-holder"><button class="rc-button goog-inline-block rc-button-audio" title="Пройти аудиотест" value="" id="recaptcha-audio-button" tabindex="1"></button></div><div class="button-holder image-button-holder"><button class="rc-button goog-inline-block rc-button-image" title="Пройти визуальный тест" value="" style="display: none;" id="recaptcha-image-button" tabindex="0"></button></div><div class="button-holder help-button-holder"><button class="rc-button goog-inline-block rc-button-help" title="Справка" value="" id="recaptcha-help-button" tabindex="2"></button></div><div class="button-holder undo-button-holder"><button class="rc-button goog-inline-block rc-button-undo" title="Отменить" value="" style="display: none;" id="recaptcha-undo-button" tabindex="0"></button></div></div><div class="verify-button-holder"><button class="rc-button-default goog-inline-block" title="" value="" id="recaptcha-verify-button" tabindex="0">Подтвердить</button></div></div><div class="rc-challenge-help" style="display:none" tabindex="0"></div></div></div><span class="rc-imageselect-tabloop-end" tabindex="0"></span></div></div></body></html>
